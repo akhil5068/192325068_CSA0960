@@ -1,0 +1,53 @@
+package My;
+
+import javax.swing.JOptionPane;
+
+public class CustomExceptionExample {
+
+    // Method that throws the custom exception
+    private void actionMethod() throws MyException {
+        try {
+            // Simulate a condition that causes an error
+            boolean errorOccurred = true; // This should be your actual condition
+            if (errorOccurred) {
+                throw new MyException("An unhandled error occurred"); // Throw custom exception with message
+            }
+            System.out.println("Action performed successfully");
+        } catch (Exception e) {
+            // Wrap and throw a custom exception
+            throw new MyException("An unhandled error occurred: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        CustomExceptionExample example = new CustomExceptionExample();
+
+        // Handling the custom exception using System.out.println
+        try {
+            example.actionMethod();
+        } catch (MyException e) {
+            System.out.println("Caught MyException: " + e.getMessage());
+            e.logError(); // Log the error
+        }
+
+        // Handling the custom exception using JOptionPane
+        try {
+            example.actionMethod();
+        } catch (MyException e) {
+            JOptionPane.showMessageDialog(null, "Caught MyException: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
+
+	public class MyException extends Exception {
+	    public MyException(String message) {
+	        super(message); // Pass the message to the superclass constructor
+	    }
+
+	    // Custom method to log the error
+	    public void logError() {
+	        System.err.println("Logging error: " + getMessage());
+	    }
+	}
+
+
