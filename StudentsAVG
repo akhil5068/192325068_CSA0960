@@ -1,0 +1,21 @@
+package average;
+
+	import java.util.Scanner;
+	public class Students {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        int numTests = 5;
+	        int[] scores = new int[numTests];
+	        int total = 0;
+	        for (int i = 0; i < numTests; i++) {
+	            System.out.print("Enter score for test " + (i + 1) + ": ");
+	            scores[i] = scanner.nextInt();
+	            total += scores[i];
+	        }
+
+	        double average = (double) total / numTests;
+	        System.out.println("The average score is: " + average);
+
+	        scanner.close();
+	    }
+	}
