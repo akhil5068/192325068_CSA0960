@@ -1,0 +1,14 @@
+package Strings;
+
+public class MyString {
+	public static void main(String[] args) {
+	String myString = "abc";
+	String mystring = new String("abc");
+	char[] charArray = {'a', 'b', 'c'};
+	String MyString = new String(charArray);
+	System.out.println(myString +mystring +MyString);
+	}
+
+
+
+}
