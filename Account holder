@@ -1,0 +1,81 @@
+import javax.swing.*;
+
+	public class AccountHandler {
+
+	    // Declare fields
+	    private JTextField nameJTextField;
+	    private JTextField accountNumJTextField;
+	    private JTextField balanceJTextField;
+	    private JTextField depositJTextField;
+	    private JTextField withdrawJTextField;
+	    private String name;
+	    private int accountNum;
+	    private int balance;
+
+	    // Constructor to initialize the text fields
+	    public AccountHandler() {
+	        nameJTextField = new JTextField();
+	        accountNumJTextField = new JTextField();
+	        balanceJTextField = new JTextField();
+	        depositJTextField = new JTextField();
+	        withdrawJTextField = new JTextField();
+	    }
+
+	    // Method to process the account information
+	    public void processAccount() {
+	        try {
+	            // Handling account number input
+	            if (accountNumJTextField.getText().equals("0")) {
+	                accountNum = 0;
+	            } else {
+	                accountNum = Integer.parseInt(accountNumJTextField.getText());
+	            } // endif
+
+	            // Handling balance input
+	            if (balanceJTextField.getText().equals("0")) {
+	                balance = 0;
+	            } else {
+	                balance = Integer.parseInt(balanceJTextField.getText());
+	            } // endif
+
+	        } // end try
+
+	        // Catch specific NumberFormatException first
+	        catch (NumberFormatException e) {
+	            name = "";
+	            JOptionPane.showMessageDialog(null, "Incorrect numeric value entered.");
+	        } // end catch
+
+	        // Catch any other exceptions
+	        catch (Exception e) {
+	            System.out.println(e);
+	        } // end catch
+
+	        // Finally block to clear the text fields
+	        finally {
+	            // Clear the JTextFields for new data
+	            nameJTextField.setText("");
+	            accountNumJTextField.setText("0");
+	            balanceJTextField.setText("0");
+	            depositJTextField.setText("0");
+	            withdrawJTextField.setText("0");
+	        } // end finally
+	    }
+
+	    // Main method to test the code
+	    public static void main(String[] args) {
+	        AccountHandler handler = new AccountHandler();
+	        
+	        // Simulate user input (for testing)
+	        handler.accountNumJTextField.setText("123");
+	        handler.balanceJTextField.setText("1000");
+	        
+	        // Process the account
+	        handler.processAccount();
+	        
+	        // After processing
+	        System.out.println("Account Number: " + handler.accountNum);
+	        System.out.println("Balance: " + handler.balance);
+	    }
+	}
+
