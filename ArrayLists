@@ -1,0 +1,22 @@
+package arraylists;
+import java.util.ArrayList;
+public class addingnames {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<String> names;
+		names = new ArrayList();
+		names.add("amy");
+		names.add("bob");
+		names.add("cindy ");
+		names.add("david ");
+		
+System.out.println(names);
+names.remove(3);
+names.add(0,"nick");
+names.add(1,"mike");
+System.out.println(names);
+System.out.print(names.size());
+	}
+
+}
