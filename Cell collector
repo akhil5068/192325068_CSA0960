@@ -1,0 +1,57 @@
+
+	public class Cell {
+		 
+		private String data;
+		public void setValue(String celldata) {
+			data=celldata;
+		}
+		public String getvalue() {
+			return data;
+			
+		}
+		public String toString() {
+			return data;
+		}
+
+}
+
+public class CellCollection {
+	    Cell[] cells;
+	    int index = 0;
+
+	    public CellCollection(int size) {
+	        cells = new Cell[size];
+	    } // end constructor
+
+	    public void add(Cell c) {
+	        cells[index] = c;
+	        index++;
+	    } // end method add
+
+	    public Cell get(int i) {
+	        return cells[i];
+	    } // end method get
+
+	    // more methods .....
+	} // end class CellCollection
+
+public class CellCollectionDriver {
+	    public static void main(String[] args) {
+	        CellCollection cells = new CellCollection(5);
+	        cells.add(new Cell());
+	        cells.add(new Cell());
+	        System.out.println(cells.get(0));
+	        System.out.println(cells.get(1));
+	        cells.get(0).setValue("First Cell");
+	        cells.get(1).setValue("Second Cell");
+	        System.out.println(cells.get(0));
+	        System.out.println(cells.get(1));
+	    } // end method main
+	} // end class
+
+
+
+
+
+
+
