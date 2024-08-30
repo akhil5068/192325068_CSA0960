@@ -1,0 +1,23 @@
+package professor;
+
+	import java.util.Scanner;
+
+public class FinalExam {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your average in the class (as a percentage): ");
+        double average = scanner.nextDouble();
+        System.out.print("Enter the number of class lectures you have missed: ");
+        int missedLectures = scanner.nextInt();
+        if ((average >= 90.0 && missedLectures <= 3) || (average >= 80.0 && missedLectures == 0)) {
+            System.out.println("You are excused from the final exam.");
+        } else {
+            System.out.println("You are not excused from the final exam.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+
