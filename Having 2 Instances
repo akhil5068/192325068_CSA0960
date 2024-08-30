@@ -1,0 +1,47 @@
+package heyyy;
+
+public class Animal {
+	    int weight, height;
+	    double speed;
+
+	    // Default constructor
+	    public Animal() {
+	        weight = 50;
+	        height = 4;
+	        speed = 2; // miles per hour
+	    }
+
+	    // Parameterized constructor
+	    public Animal(int w, int h, int s) {
+	        weight = w;
+	        height = h;
+	        speed = s;
+	    }
+
+	    public double getTime(double miles) { 
+	        // gets the number of hours to go these miles
+	        return miles / speed;
+	    }
+
+	    public int getWeight() {
+	        return weight;
+	    }
+
+	    public int getHeight() {
+	        return height;
+	    }
+
+	    public double getSpeed() {
+	        return speed;
+	    }
+
+	    public static void main(String[] args) {
+	        // Create two instances of the Animal class
+	        Animal animal1 = new Animal();
+	        Animal animal2 = new Animal(80, 5, 10);
+
+	        // Print the speeds of the animals
+	        System.out.println("Animal #1 has a speed of " + animal1.getSpeed() + ".");
+	        System.out.println("Animal #2 has a speed of " + animal2.getSpeed() + ".");
+	    }
+	}
