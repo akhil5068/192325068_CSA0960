@@ -1,0 +1,26 @@
+package Flow;
+
+public class ControlFlow {
+	    public static void main(String[] args) {
+	        String suit = "Card"; // Example suit; can be changed to test different values
+
+	        switch (suit) {
+	            case "Clubs":
+	                System.out.println("Clubs");
+	                break;
+	            case "Diamonds":
+	                System.out.println("Diamonds");
+	                break;
+	            case "Hearts":
+	                System.out.println("Hearts");
+	                break;
+	            case "Spades":
+	                System.out.println("Spades");
+	                break;
+	            default:
+	                // This triggers an assertion error if an invalid suit is provided
+	                assert false : "Unknown playing card suit: " + suit;
+	                break;
+	        } // end switch
+	    } // end main
+	} // end class CardSuitCheck
