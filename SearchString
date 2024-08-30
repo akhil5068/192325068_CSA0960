@@ -1,0 +1,26 @@
+package byee;
+
+public class SearchString {
+	    public static void main(String[] args) {
+	        String str = "Hellohi World! This is a test.";
+	        boolean foundSpace = false;
+	        int index = 0;
+
+	        while (index < str.length()) {
+	            char currentChar = str.charAt(index);
+
+	            if (currentChar == ' ') {
+	                foundSpace = true;
+	                break; // Exit the loop when the first space character is found
+	            }
+
+	            index++;
+	        }
+
+	        if (foundSpace) {
+	            System.out.println("Space found at index: " + index);
+	        } else {
+	            System.out.println("No space found in the string.");
+	        }
+	    }
+	}
