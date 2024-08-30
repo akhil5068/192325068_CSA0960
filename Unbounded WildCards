@@ -1,0 +1,21 @@
+import java.util.List;
+
+public class WildcardExample {
+
+    public void printList(List<?> list) {
+        for (Object elem : list) {
+            System.out.println(elem);
+        }
+        System.out.println(); // Optional: to add a new line after printing the list
+    } // end method printList
+
+    public static void main(String[] args) {
+        WildcardExample example = new WildcardExample();
+        
+        List<String> stringList = List.of("Apple", "Banana", "Cherry");
+        List<Integer> intList = List.of(1, 2, 3, 4, 5);
+        
+        example.printList(stringList);
+        example.printList(intList);
+    } // end method main
+} // end class WildcardExample
