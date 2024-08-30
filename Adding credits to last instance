@@ -1,0 +1,70 @@
+
+public class Student {
+	    // Instance variables
+	    private String name;
+	    private int credits;
+	    private double gpa;
+	    private double qualityPoints;
+
+	    // Constructor
+	    public Student(String name, int credits, double qualityPoints) {
+	        this.name = name;
+	        this.credits = credits;
+	        this.qualityPoints = qualityPoints;
+	        this.gpa = calculateGPA();
+	    }
+
+	    // Method to calculate the current GPA
+	    private double calculateGPA() {
+	        if (credits == 0) {
+	            return 0.0;
+	        }
+	        return qualityPoints / credits;
+	    }
+
+	    // Method to return the current GPA
+	    public double getGPA() {
+	        return gpa;
+	    }
+
+	    // Method to update credits, quality points, and GPA
+	    public void updateGrades(int newCredits, double newQualityPoints) {
+	        credits += newCredits;
+	        qualityPoints += newQualityPoints;
+	        gpa = calculateGPA();
+	    }
+
+	    // Getters for instance variables
+	    public String getName() {
+	        return name;
+	    }
+
+	    public int getCredits() {
+	        return credits;
+	    }
+
+	    public double getQualityPoints() {
+	        return qualityPoints;
+	    }
+
+	    // Main method for testing
+	    public static void main(String[] args) {
+	        // Create three instances of the Student class
+	        Student student1 = new Student("Akhil", 14, 46);
+	        Student student2 = new Student("Rajesh", 60, 173);
+	        Student student3 = new Student("Siddu", 31, 69);
+
+	        // Print initial GPA for each student
+	        System.out.println(student1.getName() + " has a GPA of " + student1.getGPA());
+	        System.out.println(student2.getName() + " has a GPA of " + student2.getGPA());
+	        System.out.println(student3.getName() + " has a GPA of " + student3.getGPA());
+
+	        // Update grades example
+	        student1.updateGrades(3, 12); // Update Akhil's grades
+	        System.out.println("After updating, " + student1.getName() + " has a GPA of " + student1.getGPA());
+
+	        // Add 13 credits and 52 quality points to the student "Siddu"
+	        student3.updateGrades(13, 52);
+	        System.out.println("After adding 13 credits and 52 quality points, " + student3.getName() + " has a GPA of " + student3.getGPA());
+	    }
+	}
