@@ -1,0 +1,16 @@
+package year;
+
+public class Daysofweak {
+	    public static void main(String[] args) {
+	        String[] daysOfWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+	        
+	        int dayIndex = 0; // Start with Sunday
+	        
+	        for (int day = 1; day <= 365; day++) {
+	            System.out.println("Day " + day + ": " + daysOfWeek[dayIndex]);
+	            
+	            // Move to the next day of the week
+	            dayIndex = (dayIndex + 1) % 7;
+	        }
+	    }
+	}
