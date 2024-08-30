@@ -1,0 +1,47 @@
+package hello;
+import java.util.Scanner;
+
+	public class Student {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Prompt for valedictorian/salutatorian status
+	        System.out.print("Are you a valedictorian or salutatorian of a school of 1400 or more students? (yes/no): ");
+	        String valSalStatus = scanner.nextLine().trim().toLowerCase();
+
+	        // If student is a valedictorian or salutatorian, admit them immediately
+	        if (valSalStatus.equals("yes")) {
+	            System.out.println("Congratulations! You are admitted to Mountville University.");
+	            return;
+	        }
+
+	        // Prompt for GPA and SAT score
+	        System.out.print("Enter your GPA: ");
+	        double gpa = scanner.nextDouble();
+
+	        System.out.print("Enter your SAT score: ");
+	        int satScore = scanner.nextInt();
+
+	        // Determine admission based on GPA and SAT score
+	        boolean admitted = false;
+
+	        if (gpa >= 4.0 && satScore >= 1100) {
+	            admitted = true;
+	        } else if (gpa >= 3.5 && satScore >= 1300) {
+	            admitted = true;
+	        } else if (gpa >= 3.0 && satScore >= 1500) {
+	            admitted = true;
+	        }
+
+	        if (admitted) {
+	            System.out.println("Congratulations! You are admitted to Mountville University.");
+	        } else {
+	            System.out.println("Sorry, you do not meet the admission criteria for Mountville University.");
+	        }
+
+	        scanner.close();
+	    }
+	}
+
+
+
