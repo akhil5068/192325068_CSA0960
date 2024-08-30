@@ -1,0 +1,40 @@
+package wow;
+
+	import java.util.Arrays;
+
+public class Comparsion {
+
+	    
+	    public static void main(String[] args) {
+	        String str1 = "akhil h";
+	        String str2 = "rajeshhi";
+	        
+	        if (isAnagram(str1, str2)) {
+	            System.out.println(str1 + " and " + str2 + " are anagrams.");
+	        } else {
+	            System.out.println(str1 + " and " + str2 + " are not anagrams.");
+	        }
+	    }
+	    
+	    public static boolean isAnagram(String str1, String str2) {
+	        String cleanStr1 = cleanString(str1);
+	        String cleanStr2 = cleanString(str2);
+	        if (cleanStr1.length() != cleanStr2.length()) {
+	            return false;
+	        }
+	    
+	        char[] charArray1 = cleanStr1.toCharArray();
+	        char[] charArray2 = cleanStr2.toCharArray();
+	       
+	        Arrays.sort(charArray1);
+	        Arrays.sort(charArray2);
+	        return Arrays.equals(charArray1, charArray2);
+	    }
+	    
+	    public static String cleanString(String str) {
+	        return str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+	    }
+	}
+
+
+
