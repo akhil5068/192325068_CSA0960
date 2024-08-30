@@ -1,0 +1,73 @@
+package inter;
+	import javax.swing.*;
+	import java.awt.*;
+	    public class Account implements InterfaceBankAccount {
+
+	        // Constant for the light blue company color
+	        public static final Color COMPANY_COLOR = new Color(173, 215, 230);
+
+	        // Implement deposit method
+	        @Override
+	        public void deposit(int amt) {
+	            System.out.println("Deposited: " + amt);
+	        }
+
+	        // Implement withdraw method
+	        @Override
+	        public void withdraw(int amt) {
+	            System.out.println("Withdrew: " + amt);
+	        }
+
+	        // Implement getBankName method
+	        @Override
+	        public String getBankName() {
+	            return BANK;
+	        }
+
+	        // Method to create a simple GUI using the company color
+	        public void createGUI() {
+	            // Create the main frame
+	            JFrame frame = new JFrame(getBankName());
+	            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	            frame.setSize(300, 200);
+
+	            // Create a panel and set the company color
+	            JPanel panel = new JPanel();
+	            panel.setBackground(COMPANY_COLOR);
+	            frame.add(panel);
+
+	            // Add a label to the panel
+	            JLabel label = new JLabel("Welcome to " + getBankName());
+	            panel.add(label);
+
+	            // Show the frame
+	            frame.setVisible(true);
+	        }
+
+	        // Main method to test the implementation
+	        public static void main(String[] args) {
+	            Account account = new Account();
+	            System.out.println("Bank Name: " + account.getBankName());
+	            account.deposit(1200); // Print deposit amount
+	            account.withdraw(200); // Print withdrawal amount
+
+	            // Create and display the GUI
+	            account.createGUI();
+	        }
+	    }
+package inter;
+import javax.swing.*; // Importing Swing components
+import java.awt.*;    // Importing Color class
+
+// Define the interface
+interface InterfaceBankAccount {
+    String BANK = "JavaBank"; // Constant in the interface
+
+    // Abstract methods
+    void deposit(int amt);
+    void withdraw(int amt);
+    String getBankName();
+}
+
+// Implementing class
+
