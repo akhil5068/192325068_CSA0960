@@ -1,0 +1,19 @@
+package gd;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter a no to quit");
+		int n=s.nextInt();
+		
+		while(n>0) {
+			double result=Math.sqrt(n);
+			System.out.println("enter square no"+result);
+			System.out.println("enter negative no to exit");
+			n=s.nextInt();
+		}
+
+		
+	}
+
+}
