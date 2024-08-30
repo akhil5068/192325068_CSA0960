@@ -1,0 +1,56 @@
+package re;
+
+public class Shape {
+	    // Instance variables
+	    private int numSides;
+	    private boolean regular;
+
+	    // Default constructor
+	    public Shape() {
+	        this.numSides = 0;
+	        this.regular = false;
+	    }
+
+	    // Parameterized constructor
+	    public Shape(int numSides, boolean regular) {
+	        this.numSides = numSides;
+	        this.regular = regular;
+	    }
+
+	    // Getter method for numSides
+	    public int getNumSides() {
+	        return numSides;
+	    }
+
+	    // Setter method for numSides
+	    public void setNumSides(int numSides) {
+	        this.numSides = numSides;
+	    }
+
+	    // Getter method for regular
+	    public boolean isRegular() {
+	        return regular;
+	    }
+
+	    // Setter method for regular
+	    public void setRegular(boolean regular) {
+	        this.regular = regular;
+	    }
+
+	    // Main method for testing
+	    public static void main(String[] args) {
+	        // Create a default shape
+	        Shape defaultShape = new Shape();
+	        System.out.println("Default Shape: Sides = " + defaultShape.getNumSides() + ", Regular = " + defaultShape.isRegular());
+
+	        // Create a parameterized shape
+	        Shape triangle = new Shape(3, true);
+	        System.out.println("Triangle: Sides = " + triangle.getNumSides() + ", Regular = " + triangle.isRegular());
+
+	        // Modify the shape using setters
+	        triangle.setNumSides(4);
+	        triangle.setRegular(false);
+	        System.out.println("Modified Shape: Sides = " + triangle.getNumSides() + ", Regular = " + triangle.isRegular());
+	    }
+	}
+
