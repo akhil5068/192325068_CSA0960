@@ -1,0 +1,37 @@
+package myexception;
+
+public class CustomExceptionExample {
+
+
+	    // Method that throws the custom exception
+	    public static void riskyMethod(int value) throws MyException {
+	        if (value < 0) {
+	            throw new MyException("Negative value: " + value); // Throw custom exception if the condition is met
+	        }
+	        System.out.println("Value is valid: " + value);
+	    }
+
+	    public static void main(String[] args) {
+	        try {
+	            riskyMethod(-20); // Call the method with a value that will trigger the exception
+	        } catch (MyException e) {
+	            System.out.println("Caught MyException: " + e.getMessage());
+	            e.logError(); // Example of using a custom method in the exception
+	        }
+	    }
+	}
+package myexception;
+
+	public class MyException extends Exception {
+	    public MyException(String message) {
+	        super(message); // Pass the message to the superclass constructor
+	    }
+
+	    // You can add additional methods or fields here
+	    public void logError() {
+	        // Example of a custom method that could log the error
+	        System.err.println("Logging error: " + getMessage());
+	    }
+	}
+
+
