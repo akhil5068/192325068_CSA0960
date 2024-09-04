@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class MixedSorting {
+    public static void main(String[] args) {
+        ArrayList<String> mixedData = new ArrayList<>();
+        mixedData.add("Apple");
+        mixedData.add("2");
+        mixedData.add("Banana");
+        mixedData.add("10");
+        mixedData.add("1");
+
+        Collections.sort(mixedData);
+
+        System.out.println(mixedData);
+    }
+}
